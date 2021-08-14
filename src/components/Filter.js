@@ -7,10 +7,11 @@ import {
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import FilterButton from './FilterButton'
-
-const ALL_BUTTON_VALUE = 'All'
-const ACTIVE_BUTTON_VALUE = 'Active'
-const COMPLETED_BUTTON_VALUE = 'Completed'
+import {
+  ACTIVE_BUTTON_VALUE,
+  ALL_BUTTON_VALUE,
+  COMPLETED_BUTTON_VALUE,
+} from '../helper'
 
 const Filter = ({
   itemsLeft,
@@ -34,17 +35,17 @@ const Filter = ({
 
   const handleAllClick = (e) => {
     setActiveButton(e.target.value)
-    onAllClick()
+    onAllClick(e)
   }
 
   const handleActiveClick = (e) => {
     setActiveButton(e.target.value)
-    onActiveClick()
+    onActiveClick(e)
   }
 
   const handleCompletedClick = (e) => {
     setActiveButton(e.target.value)
-    onCompletedClick()
+    onCompletedClick(e)
   }
   return (
     <>
